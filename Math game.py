@@ -1,12 +1,15 @@
 # 0.1 imports
 from random import randint
+from math import trunc
 import time
 
 # 0.2 variables
 exit = False
 s = 0
+timer_cont = 0
 acertos = 0
 erros = 0
+record = 0
 
 # 0.3 colors
 clr = {'red': '\033[31m',
@@ -16,7 +19,6 @@ clr = {'red': '\033[31m',
        'purple': '\033[35m',
        'blue+': '\033[36m',
        'white': '\033[38m'}
-
 
 # 1.1 select menu
 while not exit:
@@ -58,30 +60,33 @@ while not exit:
     elif cod == 2:
 
         # 3.2 program run
-        print('-=-=- Tabuada MaxSpeed -=-=-'.format(clr['blue+']))
+        print('{}-=-=- Tabuada MaxSpeed -=-=-'.format(clr['blue+']))
         info = str(input('Mostrar tutorial? s/n ')).strip().lower()
         if info == 's':
-            print('''O jogo consiste em acertar a multiplicação de 5 números no menor tempo
-            possivel acertando o maximo possivel
-''')
-        start = str(input('Para iniciar o jogo digite -> OK  ')).strip().upper()
+            print('''{}O jogo consiste em acertar a multiplicação de 5 números no menor tempo
+possivel acertando o maximo possivel
+'''.format(clr['orange']))
+        start = str(input('Para iniciar o jogo digite -> OK  '.format(clr['white']))).strip().upper()
         if start == 'OK':
             print('JOGO INICIADO')
+            timer_str = time.time()
             for c in range(0, 5):
                 rand = randint(1, 10)
                 rand2 = randint(1, 10)
-                print('{} * {} = ?'.format(rand, rand2))
+                print('{}{} * {} = ?'.format(clr['green'], rand, rand2))
                 calc = (rand * rand2)
                 print(calc)
-                resp = int(input('Qual é o resultado da conta? _-> '))
+                resp = int(input('{}Qual é o resultado da conta? _-> '.format(clr['blue+'])))
 
                 # game win detector
                 if resp == calc:
                     acertos += 1
                 else:
                     erros += 1
+            timer_end = time.time()
+            time_calc = (timer_end - timer_str)
+            current = trunc(time_calc)
             print('{}Você acertou {} e errou {}'.format(clr['purple'], acertos, erros))
+            print('Tempo decorrido: {}s '.format(current))
             print('''
-            
-            
-''')
+            ''')
