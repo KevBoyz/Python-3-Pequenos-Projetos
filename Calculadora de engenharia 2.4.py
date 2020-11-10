@@ -1,4 +1,18 @@
-print('=\+_Engineer Calculator 2.0_+/=')
+from time import time
+from time import sleep
+from datetime import date
+
+
+clr = {'red': '\033[31m',
+       'green': '\033[32m',
+       'orange': '\033[33m',
+       'blue': '\033[34m',
+       'purple': '\033[35m',
+       'blue+': '\033[36m',
+       'white': '\033[38m'}
+
+timer_str = time()
+print('=\+_Engineer Calculator 2.4_+/=  {}'.format(date.today()))
 while True:
     print('''
     Select your calc tool
@@ -9,7 +23,10 @@ while True:
     Exit [5]''')
     select = int(input('-> '))
 
-    if select == 1:
+    if select > 5 or select <= 0:
+        print('Invalid number')
+
+    elif select == 1:
         info = str(input('Show info? y/n ')).strip().lower()
         if info == 'y':
             print('Calculate how many bricks will be needed to build a wall')
@@ -83,4 +100,10 @@ A área total da parede é de {:.2f}m2'''.format(m2_sub))
         print('consumirá aproximadamente {} litros de tinta'.format(m2_sub/litro_m2))
 
     elif select == 5:
+        timer_end = time()
         break
+timer_calc = (timer_end - timer_str)
+cron = ('Você ultilizou o programa por {:.2f} minutos'.format(timer_calc/60))
+print(cron.replace('.', ':'))
+
+sleep(5)
