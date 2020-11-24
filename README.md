@@ -18,5 +18,4 @@ Executando
 python -m auto_py_to_exe
 ```
 ###### Configuração padrão
-_One File_
-_Console based_
+_One File, Console based_
