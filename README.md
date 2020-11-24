@@ -1,4 +1,4 @@
-#Sobre este repositório
+# Sobre este repositório
 Contem projetos rápidos de programação para fins pessoais e para treinar a linguagem.
 Recomendo a leitura  e análize dos códigos  para  aprendizado pessoal. Estou aberto  à  dicas, deixe sua solicitação de pull^^
 
