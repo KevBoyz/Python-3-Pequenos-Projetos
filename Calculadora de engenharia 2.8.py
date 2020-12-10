@@ -4,7 +4,7 @@ from datetime import date
 from math import ceil
 
 clr = {1: '\033[31m',    # Red Green Orange Blue Purple Blue+ White
-       2: '\033[32m',
+       2: '\033[32m',    # Primeiro versionamento Github
        3: '\033[33m',
        4: '\033[34m',
        5: '\033[35m',
